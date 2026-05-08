@@ -101,6 +101,7 @@ const Converter = () => {
               <label className="converter-label">From</label>
               <input
                 type="number"
+                min={category === CategoryTypes.Temperature ? undefined : 0}
                 value={inputValue}
                 onChange={(e) => handleInput(e.target.value)}
                 placeholder="Enter value"
