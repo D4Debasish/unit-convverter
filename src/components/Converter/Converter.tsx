@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import "./Converter.css";
-import Select from "../ui/Select";
+import Select from "../Ui/Select";
 import { categories, convertTemperature } from "../../utils/utilityFunctions";
 import type { Category } from "./converter.types";
 import { CategoryTypes, TemperatureUnits } from "../../utils/constants";
@@ -80,6 +80,10 @@ const Converter = () => {
     }
   };
 
+  const viewResult = () => {
+    return `${inputValue} ${fromUnit} = ${result} ${toUnit}`;
+  };
+
   return (
     <div className="converter-page">
       <div className="converter-container">
@@ -134,9 +138,7 @@ const Converter = () => {
           {error && <p className="converter-error">{error}</p>}
           {result && !error && (
             <div className="converter-result-banner">
-              <span className="converter-result-text">
-                {inputValue} {fromUnit} = {result} {toUnit}
-              </span>
+              <span className="converter-result-text">{viewResult()}</span>
             </div>
           )}
         </div>
