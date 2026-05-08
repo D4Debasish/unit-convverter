@@ -1,75 +1,51 @@
-# React + TypeScript + Vite
+A responsive unit converter web application that allows users to convert values between different measurement categories such as Length, Weight, Temperature
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack
 
-Currently, two official plugins are available:
+React, Typescript, Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## My Approach
 
-## React Compiler
+### 1) Project Initilaisation
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+I initialised the project using Vite with React and TypeScript because Vite provides Fast development server, Optimized builds and Better developer experience.
 
-Note: This will impact Vite dev & build performances.
+### 2) Component Structure
 
-## Expanding the ESLint configuration
+The Project is divided into reusable components:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+src/
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ├── components/
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    │    ├── Converter/
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    │    └── ui/
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    ├── utils/
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ├── constants/
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Here the page is being displayed via App.tsx where I am importing Converter.tsx using Routes from react-router-dom so to maintain its scalability for future in multiple pages are required to be added. The Converter.tsx where the ui logic is written along with maintaining its type safety and css file. Also a Select component is created to reduce the redundancy as it can be used in multiple files.
+Separated the utility functions and the common constants that includes proper enum, reusable arrays file that are being used to maintain its readability.
+
+### 3) Hooks
+
+Used hooks like useState to manage form state.
+
+useMemo to optimise recalculations so that the functions only recalculates when its dependency changes.
+
+ useCallback to prevent unnecessary function recreation.
+
+ useEffect for the debouncing input.
+
+### 4) Debounce
+
+Here debounce is used for the input using setTimeout and useEffect. The reason is to prevent conversion logic runs on every keystroke. This ensures better performance and user experience.
+
+## How to Run
+
+```bash
+npm install 
+npm run dev
 ```
