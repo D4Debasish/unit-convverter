@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import "./Converter.css";
-import Select from "../Ui/Select";
 import { categories, convertTemperature } from "../../utils/utilityFunctions";
 import type { Category } from "./converter.types";
 import { CategoryTypes, TemperatureUnits } from "../../utils/constants";
+import Select from "../Ui/Select";
 
 const Converter = () => {
   const [category, setCategory] = useState<Category>(CategoryTypes.Length);
