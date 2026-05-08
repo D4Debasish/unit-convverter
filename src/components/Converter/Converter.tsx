@@ -3,7 +3,7 @@ import "./Converter.css";
 import { categories, convertTemperature } from "../../utils/utilityFunctions";
 import type { Category } from "./converter.types";
 import { CategoryTypes, TemperatureUnits } from "../../utils/constants";
-import Select from "../Ui/Select";
+import Select from "../ui/templates/Select";
 
 const Converter = () => {
   const [category, setCategory] = useState<Category>(CategoryTypes.Length);
