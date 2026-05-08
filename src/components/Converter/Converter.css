@@ -1,0 +1,153 @@
+.converter-page {
+  min-height: 100vh;
+  background: #f5f4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.converter-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.converter-title {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.03em;
+}
+
+.converter-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 1.5rem 0;
+}
+
+.converter-tabs {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.converter-tab {
+  padding: 8px 18px;
+  border: 1px solid #d0cec7;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.15s ease;
+  font-family: "Georgia", serif;
+}
+
+.converter-tab:hover {
+  background: #eceae4;
+}
+
+.converter-tab-active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+.converter-card {
+  background: #fff;
+  border: 1px solid #e0ded8;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.converter-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.converter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.converter-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.converter-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d0cec7;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: #fafaf8;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.converter-input:focus {
+  border-color: #1a1a1a;
+}
+
+.converter-result-input {
+  background: #f0efe9;
+  color: #333;
+  cursor: default;
+}
+
+.converter-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d0cec7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background: #fafaf8;
+  cursor: pointer;
+  outline: none;
+  font-family: "Georgia", serif;
+}
+
+.converter-select:focus {
+  border-color: #1a1a1a;
+}
+
+.converter-error {
+  font-size: 13px;
+  color: #c0392b;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.converter-result-banner {
+  margin-top: 1rem;
+  padding: 12px 16px;
+  background: #f0efe9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.converter-result-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+@media (max-width: 640px) {
+  .converter-row {
+    grid-template-columns: 1fr;
+  }
+}
